@@ -26,13 +26,14 @@ $ cabal haddock
 ```
 Next build a tarball from the result:
 ```
-$ tar -cz --format=ustar -f docs.tar.gz dist-newstyle/build/*/*/*/doc/html
+$ cp -R dist-newstyle/build/*/*/*/doc/html $PKG-$VERSION-docs
+$ tar -cz --format=ustar -f docs.tar.gz $PKG-$VERSION-docs
 ```
 This tarball can be uploaded to Hackage with `curl`:
 ```
 $ curl -X PUT \
     -H 'Content-Type: application/x-tar' \
-    -H 'Content-Encoding gzip' \
+    -H 'Content-Encoding: gzip' \
     --data-binary \
     @docs.tar.gz \
     https://$USERNAME:$PASSWORD@hackage.haskell.org/package/$PKG-$VERSION/docs
