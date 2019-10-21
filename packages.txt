@@ -1,0 +1,19 @@
+# This file constains the list of Debian package names present on the Hackage
+# documentation builder.
+
+c2hs
+freeglut3-dev
+libalut-dev
+libblas-dev
+libbrotli-dev
+libicu-dev
+liblapack-dev
+liblzma-dev
+libopenal-dev
+libpq-dev
+libpqtypes-dev
+libssl-dev
+libtinfo-dev
+libxft-dev
+lzma-dev
+zlib1g-dev
