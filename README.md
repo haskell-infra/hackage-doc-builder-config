@@ -34,8 +34,7 @@ This tarball can be uploaded to Hackage with `curl`:
 $ curl -X PUT \
     -H 'Content-Type: application/x-tar' \
     -H 'Content-Encoding: gzip' \
-    --data-binary \
-    @docs.tar.gz \
+    --data-binary @docs.tar.gz \
     https://$USERNAME:$PASSWORD@hackage.haskell.org/package/$PKG-$VERSION/docs
 ```
 Where,
