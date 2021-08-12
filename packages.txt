@@ -3,15 +3,18 @@
 
 c2hs
 freeglut3-dev
+freetds-dev
 libalut-dev
 libblas-dev
 libbrotli-dev
+libevdev-dev
 libicu-dev
 liblapack-dev
 liblzma-dev
 libopenal-dev
 libpq-dev
 libpqtypes-dev
+libsdl2-dev
 libssl-dev
 libtinfo-dev
 libxft-dev
