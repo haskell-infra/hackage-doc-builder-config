@@ -9,6 +9,7 @@ libblas-dev
 libbrotli-dev
 libevdev-dev
 libglew-dev
+libgsl-dev
 libicu-dev
 liblapack-dev
 liblzma-dev
