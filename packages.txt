@@ -5,6 +5,7 @@ c2hs
 freeglut3-dev
 freetds-dev
 libalut-dev
+libasound-dev
 libblas-dev
 libbrotli-dev
 libbz2-dev
