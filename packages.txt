@@ -24,3 +24,7 @@ libxft-dev
 libzmq3-dev
 lzma-dev
 zlib1g-dev
+
+# For HGL:
+libxrandr-dev
+libxss-dev
