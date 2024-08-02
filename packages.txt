@@ -11,6 +11,7 @@ libbz2-dev
 libevdev-dev
 libglew-dev
 libgsl-dev
+libhdf5-dev
 libicu-dev
 liblapack-dev
 liblzma-dev
