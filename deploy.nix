@@ -13,7 +13,7 @@
       ${pkgs.run-hackage-build}/bin/hackage-build build \
         --continuous \
         --keep-going \
-        --build-attempts=3 \
+        --build-attempts=2 \
         --run-time=120 \
         --build-order=recent-uploads-first
     '';
