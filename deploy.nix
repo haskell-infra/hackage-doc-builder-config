@@ -10,12 +10,15 @@
 
   systemd.services.hackage-doc-builder = {
     script = ''
-      ${pkgs.run-hackage-build}/bin/hackage-build build \
-        --continuous \
-        --keep-going \
-        --build-attempts=2 \
-        --run-time=120 \
-        --build-order=recent-uploads-first
+      while true; do
+        rm -f build-cache/tmp-install/cabal.project
+        timeout -k 1m 140m \
+          ${pkgs.run-hackage-build}/bin/hackage-build build \
+          --build-attempts=2 \
+          --run-time=120 \
+          --build-order=recent-uploads-first
+        sleep 300
+      done
     '';
     serviceConfig = {
       User = "hackage-doc-builder";
