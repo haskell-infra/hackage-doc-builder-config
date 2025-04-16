@@ -14,7 +14,8 @@
         --continuous \
         --keep-going \
         --build-attempts=3 \
-        --build-order=latest-version-first
+        --run-time=120 \
+        --build-order=recent-uploads-first
     '';
     serviceConfig = {
       User = "hackage-doc-builder";
