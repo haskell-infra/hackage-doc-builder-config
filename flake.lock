@@ -62,15 +62,16 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1738004100,
-        "narHash": "sha256-tm9hfo5sngd6gtPgtswevvS8TkQ3n6zPmt1sAlPGwDw=",
-        "owner": "haskell",
+        "lastModified": 1744837621,
+        "narHash": "sha256-yYI2/f7ZCuWccmerR6XbOXNR9jLeaN8/qrBxsa6YQwI=",
+        "owner": "bgamari",
         "repo": "hackage-server",
-        "rev": "1bb90f429b3bccba24402314497de4eba8336114",
+        "rev": "ee07834072db6d001159cf9e7459b2d53159ae3a",
         "type": "github"
       },
       "original": {
-        "owner": "haskell",
+        "owner": "bgamari",
+        "ref": "wip/doc-builder-tls",
         "repo": "hackage-server",
         "type": "github"
       }

@@ -3,7 +3,7 @@
 
   inputs.nixpkgs.url = "github:nixos/nixpkgs";
   inputs.flake-utils.url = "github:numtide/flake-utils";
-  inputs.hackage-server.url = "github:haskell/hackage-server";
+  inputs.hackage-server.url = "github:bgamari/hackage-server/wip/doc-builder-tls";
 
   outputs = inputs@{ self, nixpkgs, flake-utils, ... }:
     flake-utils.lib.eachDefaultSystem (system:
