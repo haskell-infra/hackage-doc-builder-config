@@ -62,11 +62,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1744837621,
-        "narHash": "sha256-yYI2/f7ZCuWccmerR6XbOXNR9jLeaN8/qrBxsa6YQwI=",
+        "lastModified": 1744930311,
+        "narHash": "sha256-MzgOT5FheZuQ+zG+0XDmdS19aE4+jPQ8nji9Cv+gm0k=",
         "owner": "bgamari",
         "repo": "hackage-server",
-        "rev": "ee07834072db6d001159cf9e7459b2d53159ae3a",
+        "rev": "2ae5c14949b3b7c3867a6dfc3609a03cc2549afc",
         "type": "github"
       },
       "original": {
