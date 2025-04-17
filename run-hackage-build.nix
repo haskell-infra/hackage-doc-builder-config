@@ -13,6 +13,7 @@ let
 
 in
 pkgs.writeScriptBin "hackage-build" ''
+  #!/bin/sh
   PATH="$PATH:${ghc}/bin:${pkgs.curl}/bin:${pkgs.cabal-install}/bin:${pkgs.pkg-config}/bin"
 
   ${pkgs.lib.concatMapStringsSep "\n" f deps}
@@ -20,6 +21,5 @@ pkgs.writeScriptBin "hackage-build" ''
   export NIX_CFLAGS_COMPILE
   export PKG_CONFIG_PATH
 
-  #cabal install --lib --force-reinstalls zlib
   ${pkgs.hackage-server}/bin/hackage-build $@
 ''
