@@ -30,9 +30,11 @@
           };
 
           hackage-build = flake-utils.lib.mkApp {
-            drv = self.packages.${system}.hackage-server;
+            drv = self.packages.${system}.run-hackage-build;
             exePath = "/bin/hackage-build";
           };
+
+          default = hackage-build;
         };
       }
     ) // {
