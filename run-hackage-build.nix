@@ -2,7 +2,6 @@
 
 let
   ghc = pkgs.haskell.compiler.ghc984;
-  cabal-install = pkgs.cabal-install;
 
   deps = pkgs.callPackage ./build-packages.nix {};
   f = pkg: ''
@@ -14,7 +13,7 @@ let
 
 in
 pkgs.writeScriptBin "hackage-build" ''
-  PATH="$PATH:${ghc}/bin:${cabal-install}/bin:${pkgs.pkg-config}/bin"
+  PATH="$PATH:${ghc}/bin:${pkgs.curl}/bin:${pkgs.cabal-install}/bin:${pkgs.pkg-config}/bin"
 
   ${pkgs.lib.concatMapStringsSep "\n" f deps}
   export NIX_LDFLAGS
