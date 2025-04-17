@@ -1,3 +1,9 @@
+# To deploy:
+#  1. Add module to system configuration.
+#  2. Switch to configuration.
+#  3. Populate /var/lib/hackage-doc-builder/build-cabal/hackage-build-config
+#     with credentials.
+
 { pkgs, ... }:
 
 {
