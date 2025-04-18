@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "cabal": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1719273538,
+        "narHash": "sha256-/TECd3cdqGDdlEur88H0KbV7jcE/czc0jecj9921T5c=",
+        "owner": "haskell",
+        "repo": "cabal",
+        "rev": "260ecdc3d848782d4df49e629cb0a5dc9e96ca9e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "haskell",
+        "ref": "cabal-install-v3.12.1.0",
+        "repo": "cabal",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -51,6 +68,23 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "hackage-security": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1712079031,
+        "narHash": "sha256-2fgoWMyLlcYtk2NUu6LEs0gKO6M6qX2uh3TItDLyQWI=",
+        "owner": "haskell",
+        "repo": "hackage-security",
+        "rev": "514482d7a5a7df3b010b9137f50fdc928e659e93",
+        "type": "github"
+      },
+      "original": {
+        "owner": "haskell",
+        "ref": "hackage-security/v0.6.2.6",
+        "repo": "hackage-security",
         "type": "github"
       }
     },
@@ -124,7 +158,9 @@
     },
     "root": {
       "inputs": {
+        "cabal": "cabal",
         "flake-utils": "flake-utils",
+        "hackage-security": "hackage-security",
         "hackage-server": "hackage-server",
         "nixpkgs": "nixpkgs_2"
       }
