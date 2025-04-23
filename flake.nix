@@ -4,7 +4,7 @@
   inputs.nixpkgs.url = "github:nixos/nixpkgs";
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.hackage-server.url = "github:bgamari/hackage-server/wip/doc-builder-tls";
-  inputs.cabal.url = "github:haskell/cabal/cabal-install-v3.12.1.0";
+  inputs.cabal.url = "github:haskell/cabal/cabal-install-v3.10.3.0";
   inputs.cabal.flake = false;
   inputs.hackage-security.url = "github:haskell/hackage-security/hackage-security/v0.6.2.6";
   inputs.hackage-security.flake = false;
@@ -43,19 +43,21 @@
         };
       }
     ) // {
-      nixOverlays.default = self2: super2: {
+      nixOverlays.default = self2: super2:
+        let hsPkgs = self2.haskell.packages.ghc96;
+        in {
         hackage-server = inputs.hackage-server.packages.x86_64-linux.hackage-server;
         inherit (self.packages.x86_64-linux) run-hackage-build;
 
-        cabal-install = self2.haskellPackages.callCabal2nix "cabal-install" "${inputs.cabal}/cabal-install" { inherit (self2) Cabal cabal-install-solver hackage-security; };
-        cabal-install-solver = self2.haskellPackages.callCabal2nix "cabal-install-solver" "${inputs.cabal}/cabal-install-solver" { inherit (self2) Cabal; };
-        Cabal = self2.haskellPackages.callCabal2nix "Cabal" "${inputs.cabal}/Cabal" { inherit (self2) Cabal-syntax; };
-        Cabal-syntax = self2.haskellPackages.callCabal2nix "Cabal-syntax" "${inputs.cabal}/Cabal-syntax" { };
-        Cabal-described = self2.haskellPackages.callCabal2nix "Cabal-described" "${inputs.cabal}/Cabal-described" { };
-        Cabal-QuickCheck = self2.haskellPackages.callCabal2nix "Cabal-QuickCheck" "${inputs.cabal}/Cabal-QuickCheck" { };
-        Cabal-tests = self2.haskellPackages.callCabal2nix "Cabal-tests" "${inputs.cabal}/Cabal-tests" { };
-        Cabal-tree-diff = self2.haskellPackages.callCabal2nix "Cabal-tree-diff" "${inputs.cabal}/Cabal-tree-diff" { };
-        hackage-security = self2.haskellPackages.callCabal2nix "hackage-security" "${inputs.hackage-security}/hackage-security" { inherit (self2) Cabal Cabal-syntax; };
+        cabal-install = hsPkgs.callCabal2nix "cabal-install" "${inputs.cabal}/cabal-install" { inherit (self2) Cabal cabal-install-solver hackage-security; };
+        cabal-install-solver = hsPkgs.callCabal2nix "cabal-install-solver" "${inputs.cabal}/cabal-install-solver" { inherit (self2) Cabal; };
+        Cabal = hsPkgs.callCabal2nix "Cabal" "${inputs.cabal}/Cabal" { inherit (self2) Cabal-syntax; };
+        Cabal-syntax = hsPkgs.callCabal2nix "Cabal-syntax" "${inputs.cabal}/Cabal-syntax" { };
+        Cabal-described = hsPkgs.callCabal2nix "Cabal-described" "${inputs.cabal}/Cabal-described" { };
+        Cabal-QuickCheck = hsPkgs.callCabal2nix "Cabal-QuickCheck" "${inputs.cabal}/Cabal-QuickCheck" { };
+        Cabal-tests = hsPkgs.callCabal2nix "Cabal-tests" "${inputs.cabal}/Cabal-tests" { };
+        Cabal-tree-diff = hsPkgs.callCabal2nix "Cabal-tree-diff" "${inputs.cabal}/Cabal-tree-diff" { };
+        hackage-security = hsPkgs.callCabal2nix "hackage-security" "${inputs.hackage-security}/hackage-security" { inherit (self2) Cabal Cabal-syntax; };
       };
 
       nixosModules.doc-builder = {pkgs, ...}: {
