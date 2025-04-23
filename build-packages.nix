@@ -2,6 +2,10 @@
 { pkgs }:
 
 with pkgs; [
+  haskellPackages.alex
+  haskellPackages.c2hs
+  haskellPackages.happy
+
   blas
   brotli
   bzip2
@@ -11,7 +15,6 @@ with pkgs; [
   freetype
   glew
   gsl
-  haskellPackages.c2hs
   icu
   lapack
   libGLU
