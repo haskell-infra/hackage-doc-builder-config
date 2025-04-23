@@ -3,7 +3,7 @@
 let
   ghc = pkgs.haskell.compiler.ghc984;
 
-  deps = pkgs.callPackage ./build-packages.nix {};
+  deps = pkgs.callPackage ./build-depends.nix {};
   f = pkg: ''
     NIX_LDFLAGS="$NIX_LDFLAGS -L${pkgs.lib.getLib pkg}/lib"
     NIX_CFLAGS_LINK="$NIX_CFLAGS_LINK -L${pkgs.lib.getLib pkg}/lib"

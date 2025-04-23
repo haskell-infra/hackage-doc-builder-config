@@ -12,7 +12,7 @@ missing native library you have two options:
     [`nixpkgs`](https://github.com/NixOS/nixpkgs/),
     and small then you can petition to have it installed on the Hackage
     documentation builder by opening a merge request adding it to the list of
-    Debian package names in [`build-packages.nix`](build-packages.nix)
+    Debian package names in [`build-depends.nix`](build-depends.nix)
 
  2. Otherwise you can upload documentation to Hackage [manually](#manual-upload).
 
