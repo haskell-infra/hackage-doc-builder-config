@@ -5,6 +5,7 @@ let
 
   deps = pkgs.callPackage ./build-depends.nix {};
   f = pkg: ''
+    PATH="$PATH:${pkg}/bin"
     NIX_LDFLAGS="$NIX_LDFLAGS -L${pkgs.lib.getLib pkg}/lib"
     NIX_CFLAGS_LINK="$NIX_CFLAGS_LINK -L${pkgs.lib.getLib pkg}/lib"
     NIX_CFLAGS_COMPILE="$NIX_CFLAGS_COMPILE -isystem ${pkgs.lib.getInclude pkg}/include"
@@ -15,6 +16,7 @@ in
 pkgs.writeScriptBin "hackage-build" ''
   #!/bin/sh
   PATH="$PATH:${ghc}/bin:${pkgs.curl}/bin:${pkgs.cabal-install}/bin:${pkgs.pkg-config}/bin"
+  export PATH
 
   ${pkgs.lib.concatMapStringsSep "\n" f deps}
   export NIX_LDFLAGS
