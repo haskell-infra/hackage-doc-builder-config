@@ -30,6 +30,7 @@ with pkgs; [
   libGLU
   libevdev
   libglvnd
+  libjpeg
   libsodium
   ncurses
   openal
