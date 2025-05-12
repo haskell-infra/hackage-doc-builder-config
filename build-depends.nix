@@ -34,6 +34,7 @@ with pkgs; [
   ncurses
   openal
   openssl
+  pcre
   postgresql.lib
   sdl3
   xz
