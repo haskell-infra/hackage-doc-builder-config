@@ -2,10 +2,20 @@
 { pkgs }:
 
 with pkgs; [
+  # Native build tools
+  autoconf
+  automake
+  libtool
+  bash
+  bintools
+  m4
+
+  # Haskell build tools
   haskellPackages.alex
   haskellPackages.c2hs
   haskellPackages.happy
 
+  # Native libraries
   blas
   brotli
   bzip2
