@@ -46,19 +46,19 @@
       nixOverlays.default = self2: super2:
         let hsPkgs = self2.haskell.packages.ghc96;
         in {
-        hackage-server = inputs.hackage-server.packages.x86_64-linux.hackage-server;
-        inherit (self.packages.x86_64-linux) run-hackage-build;
+          hackage-server = inputs.hackage-server.packages.x86_64-linux.hackage-server;
+          inherit (self.packages.x86_64-linux) run-hackage-build;
 
-        cabal-install = hsPkgs.callCabal2nix "cabal-install" "${inputs.cabal}/cabal-install" { inherit (self2) Cabal cabal-install-solver hackage-security; };
-        cabal-install-solver = hsPkgs.callCabal2nix "cabal-install-solver" "${inputs.cabal}/cabal-install-solver" { inherit (self2) Cabal; };
-        Cabal = hsPkgs.callCabal2nix "Cabal" "${inputs.cabal}/Cabal" { inherit (self2) Cabal-syntax; };
-        Cabal-syntax = hsPkgs.callCabal2nix "Cabal-syntax" "${inputs.cabal}/Cabal-syntax" { };
-        Cabal-described = hsPkgs.callCabal2nix "Cabal-described" "${inputs.cabal}/Cabal-described" { };
-        Cabal-QuickCheck = hsPkgs.callCabal2nix "Cabal-QuickCheck" "${inputs.cabal}/Cabal-QuickCheck" { };
-        Cabal-tests = hsPkgs.callCabal2nix "Cabal-tests" "${inputs.cabal}/Cabal-tests" { };
-        Cabal-tree-diff = hsPkgs.callCabal2nix "Cabal-tree-diff" "${inputs.cabal}/Cabal-tree-diff" { };
-        hackage-security = hsPkgs.callCabal2nix "hackage-security" "${inputs.hackage-security}/hackage-security" { inherit (self2) Cabal Cabal-syntax; };
-      };
+          cabal-install = hsPkgs.callCabal2nix "cabal-install" "${inputs.cabal}/cabal-install" { inherit (self2) Cabal cabal-install-solver hackage-security; };
+          cabal-install-solver = hsPkgs.callCabal2nix "cabal-install-solver" "${inputs.cabal}/cabal-install-solver" { inherit (self2) Cabal; };
+          Cabal = hsPkgs.callCabal2nix "Cabal" "${inputs.cabal}/Cabal" { inherit (self2) Cabal-syntax; };
+          Cabal-syntax = hsPkgs.callCabal2nix "Cabal-syntax" "${inputs.cabal}/Cabal-syntax" { };
+          Cabal-described = hsPkgs.callCabal2nix "Cabal-described" "${inputs.cabal}/Cabal-described" { };
+          Cabal-QuickCheck = hsPkgs.callCabal2nix "Cabal-QuickCheck" "${inputs.cabal}/Cabal-QuickCheck" { };
+          Cabal-tests = hsPkgs.callCabal2nix "Cabal-tests" "${inputs.cabal}/Cabal-tests" { };
+          Cabal-tree-diff = hsPkgs.callCabal2nix "Cabal-tree-diff" "${inputs.cabal}/Cabal-tree-diff" { };
+          hackage-security = hsPkgs.callCabal2nix "hackage-security" "${inputs.hackage-security}/hackage-security" { inherit (self2) Cabal Cabal-syntax; };
+        };
 
       nixosModules.doc-builder = {pkgs, ...}: {
         imports = [
