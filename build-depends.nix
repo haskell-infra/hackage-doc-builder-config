@@ -24,6 +24,7 @@ with pkgs; [
   freetds
   freetype
   glew
+  glfw
   gsl
   hdf5
   icu
