@@ -12,7 +12,9 @@ missing native library you have two options:
     [`nixpkgs`](https://github.com/NixOS/nixpkgs/),
     and small then you can petition to have it installed on the Hackage
     documentation builder by opening a merge request adding it to the list of
-    Debian package names in [`build-depends.nix`](build-depends.nix)
+    `nixpkgs` derivation paths in [`build-depends.nix`](build-depends.nix).
+    These can be found via either [`search.nixos.org`][nixos-search]
+    or locally using [`nix-index`][nix-index].
 
  2. Otherwise you can upload documentation to Hackage [manually](#manual-upload).
 
@@ -27,3 +29,8 @@ builder Haddock documentation can always be manually uploaded to Hackage using
 $ cabal haddock --haddock-for-hackage
 $ cabal upload --documentation --publish
 ```
+
+
+[nixos-search]: https://search.nixos.org/packages?channel=24.11&size=50&sort=relevance&type=packages
+[nix-index]: https://github.com/nix-community/nix-index
+
