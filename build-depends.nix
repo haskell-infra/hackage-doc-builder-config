@@ -25,6 +25,7 @@ with pkgs; [
   freetype
   glew
   gsl
+  hdf5
   icu
   lapack
   libGLU
