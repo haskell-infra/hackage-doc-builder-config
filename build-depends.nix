@@ -30,10 +30,12 @@ with pkgs; [
   libGLU
   libevdev
   libglvnd
+  libjpeg
   libsodium
   ncurses
   openal
   openssl
+  pcre
   postgresql.lib
   sdl3
   xz
