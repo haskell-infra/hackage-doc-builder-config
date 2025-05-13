@@ -11,6 +11,10 @@ with pkgs; [
   m4
 
   # Haskell build tools
+  # These should really be handled via build-tool-depends declared in the cabal
+  # file. However, the doc builder currently ignores such dependencies due to
+  # https://github.com/haskell/hackage-server/issues/1393. Drop these once
+  # that issue is executed.
   haskellPackages.alex
   haskellPackages.BNFC
   haskellPackages.c2hs
