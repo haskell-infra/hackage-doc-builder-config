@@ -9,6 +9,8 @@ with pkgs; [
   bash
   bintools
   m4
+  gnused
+  gawk
 
   # Haskell build tools
   # These should really be handled via build-tool-depends declared in the cabal
