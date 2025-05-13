@@ -41,6 +41,10 @@
 
           default = hackage-build;
         };
+
+        checks = {
+          default = self.packages.${system}.run-hackage-build;
+        };
       }
     ) // {
       nixOverlays.default = self2: super2:
