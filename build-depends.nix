@@ -12,8 +12,12 @@ with pkgs; [
 
   # Haskell build tools
   haskellPackages.alex
+  haskellPackages.BNFC
   haskellPackages.c2hs
   haskellPackages.happy
+  haskellPackages.hspec-discover
+  haskellPackages.markdown-unlit
+  haskellPackages.tasty-discover
 
   # Native libraries
   blas
