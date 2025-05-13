@@ -17,12 +17,16 @@
   systemd.services.hackage-doc-builder = {
     script = ''
       rm -f build-cache/tmp-install/cabal.project
+      rm -Rf "$HOME"
+      mkdir -p "$HOME"
+
       timeout -k 1m 140m \
         ${pkgs.run-hackage-build}/bin/hackage-build build \
         --build-attempts=2 \
         --run-time=120 \
         --build-order=recent-uploads-first
     '';
+    environment.HOME = "%T/hackage-doc-builder";
     serviceConfig = {
       Restart = "always";
       RestartSec = 1;
