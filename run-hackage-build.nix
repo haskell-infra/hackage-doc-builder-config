@@ -38,12 +38,12 @@ let
       esac
     done
 
-    cat ${cabalFrag} >> $config
+    cat ${cabalFrag} >> "$config"
 
-    ${pkgs.cabal-install}/bin/cabal --config-file=$config ''${args[@]}
+    ${pkgs.cabal-install}/bin/cabal --config-file="$config" ''${args[@]}
     ret=$?
-    rm $config
-    exit $?
+    rm -f $config
+    exit $ret
   '';
 
   script = ''
