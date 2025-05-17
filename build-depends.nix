@@ -20,6 +20,7 @@ with pkgs; [
   haskellPackages.alex
   haskellPackages.BNFC
   haskellPackages.c2hs
+  haskellPackages.cpphs
   haskellPackages.happy
   haskellPackages.hspec-discover
   haskellPackages.markdown-unlit
