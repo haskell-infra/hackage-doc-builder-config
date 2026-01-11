@@ -63,7 +63,7 @@ with pkgs; [
   pango # simple-pango
   pcre # regex-pcre
   pcre2 # simple-cairo
-  postgresql.lib
+  postgresql
   sdl3
   systemdMinimal # hidapi requires udev
   util-linux # simple-pango requires mount
