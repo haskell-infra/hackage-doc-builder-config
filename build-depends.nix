@@ -9,6 +9,7 @@ with pkgs; [
   bash
   bintools
   m4
+  gnumake
   gnused
   gawk
   pkg-config
