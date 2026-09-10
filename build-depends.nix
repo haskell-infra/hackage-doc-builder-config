@@ -67,15 +67,15 @@ with pkgs; [
   sdl3
   systemdMinimal # hidapi requires udev
   util-linux # simple-pango requires mount
-  xorg.libX11 # GLFW-b
-  xorg.libXcursor # GLFW-b
-  xorg.libXdmcp # simple-cairo
-  xorg.libXi # GLFW-b
-  xorg.libXinerama # GLFW-b
-  xorg.libXrandr # GLFW-b
-  xorg.libXxf86vm # GLFW-b
+  libx11 # GLFW-b
+  libxcursor # GLFW-b
+  libxdmcp # simple-cairo
+  libxi # GLFW-b
+  libxinerama # GLFW-b
+  libxrandr # GLFW-b
+  libxxf86vm # GLFW-b
   xz # lzma
-  zeromq4
+  zeromq
   zlib
 ]
 
