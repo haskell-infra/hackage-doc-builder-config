@@ -3,16 +3,16 @@
     "cabal": {
       "flake": false,
       "locked": {
-        "lastModified": 1710231346,
-        "narHash": "sha256-I4ide7LZXDNjGvM3eIKEE/lDLzLEqY57mDLrFEWASys=",
+        "lastModified": 1764969684,
+        "narHash": "sha256-wJdHqxAQsyhfWu2tTLcszX+YET5+56pIDP7EDy21Cm8=",
         "owner": "haskell",
         "repo": "cabal",
-        "rev": "256f85d735310196d437ede86046f2a86efedc6d",
+        "rev": "8d1f5a33662be0db0654061fb53fb00e3f4417e0",
         "type": "github"
       },
       "original": {
         "owner": "haskell",
-        "ref": "cabal-install-v3.10.3.0",
+        "ref": "cabal-install-v3.16.1.0",
         "repo": "cabal",
         "type": "github"
       }
@@ -25,11 +25,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1719994518,
-        "narHash": "sha256-pQMhCCHyQGRzdfAkdJ4cIWiw+JNuWsTX7f0ZYSyz0VY=",
+        "lastModified": 1778716662,
+        "narHash": "sha256-m1Yf0wZ8j1OHjTc2UwHwyQRSnNeSgLJOd7q5Y45hzi4=",
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "rev": "9227223f6d922fee3c7b190b2cc238a99527bbb7",
+        "rev": "f7c1a2d347e4c52d5fb8d10cb4d94b5884e546fb",
         "type": "github"
       },
       "original": {
@@ -40,11 +40,11 @@
     },
     "flake-root": {
       "locked": {
-        "lastModified": 1713493429,
-        "narHash": "sha256-ztz8JQkI08tjKnsTpfLqzWoKFQF4JGu2LRz8bkdnYUk=",
+        "lastModified": 1723604017,
+        "narHash": "sha256-rBtQ8gg+Dn4Sx/s+pvjdq3CB2wQNzx9XGFq/JVGCB6k=",
         "owner": "srid",
         "repo": "flake-root",
-        "rev": "bc748b93b86ee76e2032eecda33440ceb2532fcd",
+        "rev": "b759a56851e10cb13f6b8e5698af7b59c44be26e",
         "type": "github"
       },
       "original": {
@@ -74,16 +74,16 @@
     "hackage-security": {
       "flake": false,
       "locked": {
-        "lastModified": 1712079031,
-        "narHash": "sha256-2fgoWMyLlcYtk2NUu6LEs0gKO6M6qX2uh3TItDLyQWI=",
+        "lastModified": 1785782536,
+        "narHash": "sha256-RH6RkJsGKFvp9EcB+Lw0qT0Mv+iIa6LoxWUksoaNQcg=",
         "owner": "haskell",
         "repo": "hackage-security",
-        "rev": "514482d7a5a7df3b010b9137f50fdc928e659e93",
+        "rev": "c7c6fdab06f152a54005843e2e91968d1f34962c",
         "type": "github"
       },
       "original": {
         "owner": "haskell",
-        "ref": "hackage-security/v0.6.2.6",
+        "ref": "hackage-security/v0.6.4.0",
         "repo": "hackage-security",
         "type": "github"
       }
@@ -93,30 +93,31 @@
         "flake-parts": "flake-parts",
         "flake-root": "flake-root",
         "haskell-flake": "haskell-flake",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
-        "lastModified": 1744930311,
-        "narHash": "sha256-MzgOT5FheZuQ+zG+0XDmdS19aE4+jPQ8nji9Cv+gm0k=",
-        "owner": "bgamari",
+        "lastModified": 1788811436,
+        "narHash": "sha256-bmc+1uI6zCOydDwZAysIIlnW5csrgOmp53mUH3xVInU=",
+        "owner": "haskell",
         "repo": "hackage-server",
-        "rev": "2ae5c14949b3b7c3867a6dfc3609a03cc2549afc",
+        "rev": "79df1dcfd496c9b9a2d88aa0ef70e59b377812db",
         "type": "github"
       },
       "original": {
-        "owner": "bgamari",
-        "ref": "wip/doc-builder-tls",
+        "owner": "haskell",
         "repo": "hackage-server",
         "type": "github"
       }
     },
     "haskell-flake": {
       "locked": {
-        "lastModified": 1721530802,
-        "narHash": "sha256-eUMmQKXjt4WQq+IBscftg/Y9bXWiOYhasfeH5Yb9Psc=",
+        "lastModified": 1779033714,
+        "narHash": "sha256-hhqI8XWucXQB5Yo6KwECkD2nldqNSd+ftfY3YoJT2/A=",
         "owner": "srid",
         "repo": "haskell-flake",
-        "rev": "f8f38ecd259338167cc0c85fd541479297a315af",
+        "rev": "375c8e3bf7c43a08eb74b60552de96f2561ade76",
         "type": "github"
       },
       "original": {
@@ -127,27 +128,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1721952842,
-        "narHash": "sha256-B6Fm/e+2Iq1LB0ITtdaVS/lxkckCwPNpgBuduuv1HzY=",
+        "lastModified": 1788688545,
+        "narHash": "sha256-LdlNYxOaOelYlabLr0rtL+ggUhNb3StR84r3wv07oHs=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "574f1a6205e63e9870c6e6132c393f9082d58d2a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "haskell-updates",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1744128892,
-        "narHash": "sha256-WIP3Q/nuiSW525uJb8dSXwCK2aQ8somxabMQZ+mkzCE=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "a6082f5a6d52bb86b437ff9c671a3c8da93bd0b2",
+        "rev": "5b6f1466c0e4a96c8ccdf3aad1cfccab4ef2250f",
         "type": "github"
       },
       "original": {
@@ -162,7 +147,7 @@
         "flake-utils": "flake-utils",
         "hackage-security": "hackage-security",
         "hackage-server": "hackage-server",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs"
       }
     },
     "systems": {

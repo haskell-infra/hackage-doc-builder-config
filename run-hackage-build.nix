@@ -1,7 +1,7 @@
 { pkgs, writeTextFile, ... }:
 
 let
-  ghc = pkgs.haskell.compiler.ghc984;
+  ghc = pkgs.haskell.compiler.ghc912;
 
   deps = pkgs.callPackage ./build-depends.nix {};
 

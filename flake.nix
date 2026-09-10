@@ -3,10 +3,11 @@
 
   inputs.nixpkgs.url = "github:nixos/nixpkgs";
   inputs.flake-utils.url = "github:numtide/flake-utils";
-  inputs.hackage-server.url = "github:bgamari/hackage-server/wip/doc-builder-tls";
-  inputs.cabal.url = "github:haskell/cabal/cabal-install-v3.10.3.0";
+  inputs.hackage-server.url = "github:haskell/hackage-server";
+  inputs.hackage-server.inputs.nixpkgs.follows = "nixpkgs";
+  inputs.cabal.url = "github:haskell/cabal/cabal-install-v3.16.1.0";
   inputs.cabal.flake = false;
-  inputs.hackage-security.url = "github:haskell/hackage-security/hackage-security/v0.6.2.6";
+  inputs.hackage-security.url = "github:haskell/hackage-security/hackage-security/v0.6.4.0";
   inputs.hackage-security.flake = false;
 
   outputs = inputs@{ self, nixpkgs, flake-utils, ... }:
@@ -49,16 +50,15 @@
       }
     ) // {
       overlays.default = final: super2:
-        let hsPkgs = final.haskell.packages.ghc96;
+        let hsPkgs = final.haskell.packages.ghc912;
         in {
           hackage-server = inputs.hackage-server.packages.x86_64-linux.hackage-server;
           inherit (self.packages.x86_64-linux) run-hackage-build;
 
           cabal-install = hsPkgs.callCabal2nix "cabal-install" "${inputs.cabal}/cabal-install" { inherit (final) Cabal cabal-install-solver hackage-security; };
           cabal-install-solver = hsPkgs.callCabal2nix "cabal-install-solver" "${inputs.cabal}/cabal-install-solver" { inherit (final) Cabal; };
-          Cabal = (hsPkgs.callCabal2nix "Cabal" "${inputs.cabal}/Cabal" { inherit (final) Cabal-syntax; }).overrideAttrs (old: {
-            patches = (old.patches or []) ++ [./cabal-hsc2hs-args-patch.diff];
-          });
+
+          Cabal = (hsPkgs.callCabal2nix "Cabal" "${inputs.cabal}/Cabal" { inherit (final) Cabal-syntax; });
           Cabal-syntax = hsPkgs.callCabal2nix "Cabal-syntax" "${inputs.cabal}/Cabal-syntax" { };
           Cabal-described = hsPkgs.callCabal2nix "Cabal-described" "${inputs.cabal}/Cabal-described" { };
           Cabal-QuickCheck = hsPkgs.callCabal2nix "Cabal-QuickCheck" "${inputs.cabal}/Cabal-QuickCheck" { };
